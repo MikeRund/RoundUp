@@ -16,7 +16,7 @@ public class Main {
 
         // accountUid: 902ed248-f5b6-40d9-a990-17b69defd6eb
         // category: 902ebc6d-b224-4f73-bf02-d8b45bcb75e3
-        String token = "eyJhbGciOiJQUzI1NiIsInppcCI6IkdaSVAifQ.H4sIAAAAAAAA_21Ty5KjMAz8lSnOoykeJgFuc9sf2A8QskhcAzZlm8xObe2_r8EQQio3uluPliX-Jsq5pElwVCB5MB_Oo-2VvrSovz7IDMl74qY2RNRpzmnXdoA55yDOaQ1125ZwSuuUZF4XbZWGYP4zJk0W1LxMC1G-Jwp9JLJTUc8EEplJ-1-ml2x_K7nWZq4ykPUpA5FVLVRIORRZKigTKAXNtb35Yh0zsG6zsqpyoIplcFMKqElUkAou264SAosiZISxPonYub1PLeoznGUR-vDcpz0zlFgVyGlwiHIemMzIc5PoFK6LVdA4cGMZ5duT4H_GJ0FJ1l51iu2R75XzB2YFUtpgsmGp_B1ExXuk68D3yB1_W-X5DSd_NVa5sDJQWqqbkhP2MbjFHjWt1gitBDLaW9PHRjOzakZ3yg7oldFgOugmLVcDNDlvhm0OHlCt2QNqiZ4byT0HHxtcwgb2GBA2FOAsbnjJHPGHeZMiWItEsAeBGvCy1oza_gneonZIs-c7Db2hMP1eOxJg5md4ZtcsazrVb61i7wO1RFkmVqM_AHeU4j4c3sIqHFzM7uPAraMeuKXOIxOH68Kzvyixiy9q7WIsSleWUx_-kTD2fkaOvQ8DTuMKR9zOJPz_4YrCMRkrH9of2a3vkX2RD-Zb33nPswEgd3umRtlF6nGnyyqel5z8-w-Gz27usgQAAA.evENJoxDbwCpYTfzRAVnLVvSzt49ItOtV9nK4mp49KRGj-PJ-6XfX0eoxL9Vm74ds2WRgujqbXkgW-KXGH7XhyJ5bPmvuSGR4D3Vp11FBXcAHd9RMR0W0q-mD4eLL6kAm6eNxlELwbTNku533mEXzaLr1NdwOaJfzL_TcV_YPbaeim6zcvVyuTmApLUQq5kMr3qOeVQwZHZOPdTxFNF3N8fJjxzTa-mhdBkX63iNCH3I7Yn57Xl47-ZkmATS_cxBh290AnbtIiIBtxWghGsIWI99I_abddzwhawz2kBsvN4b_tCZEDnms742_EQF0gixDlJ4KSxnjcT2j226em_UEIhhPLMUNUt8hhjALDId1fbRtQzSWeUT12LqidHGixeZ_-JkYtfR_tCSqpcRX8g2upVNPw3wu4GuPSv_jDtoR665S41TcFgArnvOgyHuj6_DJByueIYOWrY3dCv8D1DaQ21xCXC4NTZPnF9s5eJciN2mweCR9U0m_cOzA1RmmNmn7WqdQ1Q6XBNZnROgvhyXE5nlPEqJzFwzWJ-hmaTbaW7K5tA9AwYLkGU_8PG_N9NchOdECjnQG2IE60DCPBas_5eVaEUAo8Qxu_g7KaMJWYGMlzsA5BKRAPjqbpR10udoiry5k4wP7ur3H65trpHtUTW_V_fc6e6X8YJUqhLtsXY";
+        final String TOKEN = "eyJhbGciOiJQUzI1NiIsInppcCI6IkdaSVAifQ.H4sIAAAAAAAA_21Ty5KjMAz8lSnOoyleCY_b3PYH9gOELBLXgE3ZJrNTW_vva7AJIZUb3a1HyxJ_E2lt0iY4SRA86g_r0AxSXTpUXx-kx-Q9sXPnI5o057TvesCccyirtIGm605wTpuURN4UXZ36YP4zJW3m1aKuz1nznkh0kUjzfCGQSM_K_dKDYPNbilibuc5ANOcMyqzuoEbKocjSkrISRUlLbae_WIWMLu_yE1UNcNVVUKbnEuoqR8jOTV_6nOxE5DP8WJ9EbO3epymbCipR-D689OkqhhPWBXKanQsUy8CkJ14eJTiF62oVFI7cGkbx9iS4n-lJkIKVk71kc-QHad2BiUAI4022LKS7g6A4h3Qd-R65428jHb_h7K7aSOtXBlIJeZNixiEEdzigomiN0AggrZzRQ2i0MFHTqpdmRCe1At1DPysRDdBsnR63OXhEGbNHVAIdt4IH9j42uIaN7NAjbMnDRdzwmjnhD_MmBRCLBLAHgRzxEmsGbf8EZ1BZpMXznYZBk59-rx0I0MszPLMxy-heDlur0PtArVGGieXkDsAepbAPize_CgsXvfs4cHHUA7fWeWTCcL1_9hcldvFFrV0MRenKYh5YgB97PyPLzvkB5ynCCbcz8f-_vyJ_TNqIh_ZHdut7ZF_kg_5Wd97xYgDI3p6pSfSBetzpuornJSf__gOZGbQcsgQAAA.xT8t0qvHPpovCA_atxr5FUSqyS_nopyUGSuDL_s8339S62Yq9gRwioj5uZ0pWDCgO8_kqxylUKMeuOyUHpg2184c4OMHps3lUMnHhdBpJ4siIF4I9AdydyJ5OjdWgxSBb5DV6HuraC-FF1kANHVrlRN_9HiG39FHqaUGw8Q-O1MOENL4Avxq5lFUQFKNfdS5llQWwJzstefP9j0iCfzgxcxNT1_7ky72RpVQtdKl5BDxP-7YB23QHV0VC6gpCBm1k6XvYlwZP07rC6MVZZ5dga6bctGRB7vUD9gsYOvKn-ewGSoCJShY_oImdFTUnYk5iuyBpi1RFMJfbj3gtVW94QBke7xZRr5yRCOkRWC4ZCHXDlWso3XZJzkUuqf22Rs7dU_GjlzUSLiTzTcjCvW2QAjWyGXV0Nj8Tu6lio6ungGKvvnHXSghSWd97A0Dgu6s8Bs2He1vG11wBrO97iK6p6fgv92P-81YSwnCOb5MIr-Ggr1t88ou_NK2K3jWlnpkb3xzotusyGMdu3q4x9hrNsiHeMPuX9C3sy8UEFTgfrekcK8AVU2eox1HHAbMiWFCtQsfjrDDN6DXyUQcivYxrY9EWmEvlalboQQmMIDeHNeWjaeYUt_8MyN2mfUfnOEu9s-GnXya--2g2-o6azEvKSNM44VV0ozbP3u3FHMYjdI";
         try {
             // Initiate the client
             HttpClient client = HttpClient.newHttpClient();
@@ -29,7 +29,7 @@ public class Main {
 //                            "&maxTransactionTimestamp=2024-02-27T00:00:00.000Z")) ///902ed248-f5b6-40d9-a990-17b69defd6eb/balance
                     .header("Accept", "application/json")
                     .header("Content-Type", "application/json")
-                    .header("Authorization", "Bearer " + token)
+                    .header("Authorization", "Bearer " + TOKEN)
                     .header("User-agent", "Cody Maverick")
                     .GET()
                     .build();
@@ -38,8 +38,12 @@ public class Main {
             System.out.println("Response code: " + response.statusCode());
             System.out.println(response.body());
 
-//            JSONObject responseBody = new JSONObject(response.body());
-//            JSONArray feedItems = responseBody.getJSONArray("feedItems");
+            JSONObject responseBody = new JSONObject(response.body());
+            JSONArray accountArray = responseBody.getJSONArray("accounts");
+            JSONObject accountDetails = accountArray.getJSONObject(0);
+            String accountUid = accountDetails.optString("accountUid");
+            System.out.println("UID: " + accountUid);
+
 //            for (int i = 0; i < feedItems.length(); i++){
 //                System.out.println(feedItems.get(i).toString());
 //            }
