@@ -63,8 +63,8 @@ public class TransactionClient {
 
             // View the response body
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-            System.out.println("Response code: " + response.statusCode());
-            System.out.println(response.body());
+//            System.out.println("Response code: " + response.statusCode());
+//            System.out.println(response.body());
 
             // Store feedItems in Array List
             JSONObject responseBody = new JSONObject(response.body());

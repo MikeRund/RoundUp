@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fdfa988b-148d-4e87-9c66-bb528fd2916f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/client/AccessClient.java" afterDir="false" />
+    <list default="true" id="fdfa988b-148d-4e87-9c66-bb528fd2916f" name="Changes" comment="Information form JSON Objects now extracted immediately. Better data flow overall as well.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/client/SavingsGoalClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/Accounts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/AccountClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/Transactions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/TransactionClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/TransactionClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/TransactionClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/RoundUpFeature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/RoundUpFeature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/RoundUpService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/RoundUpService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,6 +91,18 @@
       <option name="presentableId" value="Default" />
       <updated>1708944765497</updated>
     </task>
+    <task id="LOCAL-00001" summary="Information form JSON Objects now extracted immediately. Better data flow overall as well.">
+      <created>1709309631471</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1709309631471</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Information form JSON Objects now extracted immediately. Better data flow overall as well." />
+    <option name="LAST_COMMIT_MESSAGE" value="Information form JSON Objects now extracted immediately. Better data flow overall as well." />
   </component>
 </project>
