@@ -1,6 +1,3 @@
-package main;
-
-
 import client.SavingsGoalClient;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -16,7 +13,8 @@ import java.net.http.HttpResponse;
 public class Main {
     public static void main(String[] args) {
 
-        RoundUpService.roundUpToSavingsGoal();
+        RoundUpService roundUpService = new RoundUpService();
+        roundUpService.roundUpToSavingsGoal();
 
     }
 }

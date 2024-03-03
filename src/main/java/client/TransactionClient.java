@@ -2,92 +2,74 @@ package client;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+import utils.Constants;
+import utils.RequestBuilder;
 
 import java.io.IOException;
-import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.ArrayList;
-import java.util.List;
 
+// Class to handle Transaction API calls and store relevant data
 public class TransactionClient {
-
-    private ArrayList<Integer> spendingList;
+    private ArrayList<Integer> spendingList; // Necessary for calculating round up amount
 
     public TransactionClient() {
-        setSpendingList();
+        intializeSpendingList();
     }
 
+    // Getter for spendingList
     public ArrayList<Integer> getSpendingList() {
+        if (this.spendingList == null) {
+            throw new IllegalStateException("spendingList has not been initialized.");
+        }
         return this.spendingList;
     }
 
-    private void setSpendingList() {
-        ArrayList<JSONObject> transactions = getTransactions();
-        this.spendingList = calculateSpending(transactions);
+    // Initialize spending list from fetchSpendingList() method. This is done on TransactionClient creation
+    private void intializeSpendingList() {
+        this.spendingList = fetchSpendingList();
     }
 
-    private ArrayList<Integer> calculateSpending(ArrayList<JSONObject> transactions) {
-        ArrayList<Integer> spendingList = new ArrayList<>();
-        for (JSONObject transaction : transactions) {
-            String direction = transaction.getString("direction");
-            if (direction.equals("OUT")) {
-                JSONObject payment = transaction.getJSONObject("amount");
-                int amount = payment.getInt("minorUnits");
-                spendingList.add(amount);
-            }
-        }
-        return spendingList;
-    }
-
-    private ArrayList<JSONObject> getTransactions() {
+    // Method to perform api call and retrieve outgoing payments from sandbox customers account
+    private ArrayList<Integer> fetchSpendingList() {
 
         try {
-            // Initiate the client
+            // Initiate the Http client for performing API calls
             HttpClient client = HttpClient.newHttpClient();
+            RequestBuilder requestBuilder = new RequestBuilder();
+            Account account = new Account(); // Account instance needed to obtain accountUid
 
-            // Perform http request with transactions between given dates endpoint
-            HttpRequest request = HttpRequest.newBuilder()
-                    .uri(new URI("https://api-sandbox.starlingbank.com/api/v2/feed/account/902ed248-f5b6-40d9-" +
-                            "a990-17b69defd6eb/category/902ebc6d-b224-4f73-bf02-d8b45bcb75e3/transactions-between" +
-                            "?minTransactionTimestamp=2024-02-20T12:34:56.000Z" +
-                            "&maxTransactionTimestamp=2024-02-27T00:00:00.000Z"))
-                    .header("Accept", "application/json")
-                    .header("Content-Type", "application/json")
-                    .header("Authorization", "Bearer " + AccessClient.TOKEN)
-                    .header("User-agent", "Cody Maverick")
-                    .GET()
-                    .build();
+            // Build url for endpoint that fetches transactions for 1 weeks activity of customers account
+            String url = Constants.BASE_URL + "/feed/account/" + account.getAccountUid() + "/category/" + account.getCategoryUid()
+                    + "/transactions-between?minTransactionTimestamp=" + Constants.LAST_FRIDAY_TIMESTAMP + "&maxTransactionTimestamp="
+                    + Constants.THIS_FRIDAY_TIMESTAMP;
+            HttpRequest request = requestBuilder.buildGetRequest(url);
 
-            // View the response body
+            // Store requests response for data extraction
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-//            System.out.println("Response code: " + response.statusCode());
-//            System.out.println(response.body());
-
-            // Store feedItems in Array List
+;
+            // Store feedItems of customers transaction in JSON array. Initilize integer arraylist for storing outgoing payments
             JSONObject responseBody = new JSONObject(response.body());
             JSONArray feed = responseBody.getJSONArray("feedItems");
-            ArrayList<JSONObject> transactions = new ArrayList<>();
+            ArrayList<Integer> spending = new ArrayList<>();
+
+            // Iterate through JSON array and extract only outgoing payments as integers
             for (int i = 0; i < feed.length(); i++){
-                transactions.add(feed.getJSONObject(i));
+                JSONObject transactionOBJ = feed.getJSONObject(i);
+                String direction = transactionOBJ.getString("direction");
+                if (direction.equals("OUT")) {
+                    int amount = transactionOBJ.getJSONObject("amount").getInt("minorUnits");
+                    spending.add(amount);
+                }
             }
-            return transactions;
+            return spending;
 
         } catch (URISyntaxException | IOException | InterruptedException e) {
-            throw new RuntimeException(e);
+            // TODO - this should be handled, or at least logged.
+            throw new RuntimeException("Failed to fetch spending list from sandbox API", e);
         }
-    }
-
-    public static void main(String[] args) {
-
-        TransactionClient transactionClient = new TransactionClient();
-        ArrayList<Integer> spending = transactionClient.getSpendingList();
-        for (int payment: spending) {
-            System.out.println(payment);
-        }
-
-
     }
 }
